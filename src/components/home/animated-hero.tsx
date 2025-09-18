@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { preferReducedMotion } from "@/lib/utils";
+import { preferReducedMotion, withBasePath } from "@/lib/utils";
 
-const VANTA_THREE_SRC = "/animations/animation2.js";
-const VANTA_RINGS_SRC = "/animations/animation3.js";
+const VANTA_THREE_SRC = withBasePath("/animations/animation2.js");
+const VANTA_RINGS_SRC = withBasePath("/animations/animation3.js");
 
 type VantaInstance = {
   destroy?: () => void;

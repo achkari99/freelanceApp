@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { preferReducedMotion } from "@/lib/utils";
+import { preferReducedMotion, withBasePath } from "@/lib/utils";
 
-const WAVES_THREE_SRC = "/animations/waves-three.js";
-const WAVES_EFFECT_SRC = "/animations/waves-effect.js";
+const WAVES_THREE_SRC = withBasePath("/animations/waves-three.js");
+const WAVES_EFFECT_SRC = withBasePath("/animations/waves-effect.js");
 
 type VantaWavesInstance = {
   destroy?: () => void;
