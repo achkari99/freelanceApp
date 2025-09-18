@@ -7,6 +7,7 @@ const withMDX = createMDX({
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: 'export',
   experimental: {
     optimizePackageImports: ["lucide-react"],
     mdxRs: true
@@ -19,7 +20,8 @@ const nextConfig = {
         protocol: "https",
         hostname: "**"
       }
-    ]
+    ],
+    unoptimized: true
   }
 };
 
