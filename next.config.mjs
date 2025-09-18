@@ -1,13 +1,19 @@
-﻿import createMDX from "@next/mdx";
+import createMDX from "@next/mdx";
 
 const withMDX = createMDX({
   extension: /\.mdx?$/
 });
 
+const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH?.trim();
+const normalizedBasePath = rawBasePath ? `/${rawBasePath.replace(/^\/+|\/+$/g, '')}` : '';
+const assetPrefix = normalizedBasePath || undefined;
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   output: 'export',
+  basePath: normalizedBasePath || undefined,
+  assetPrefix,
   experimental: {
     optimizePackageImports: ["lucide-react"],
     mdxRs: true
