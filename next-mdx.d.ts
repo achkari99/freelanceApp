@@ -1,12 +1,11 @@
 declare module '*.mdx' {
-  import { ReactElement } from 'react';
-  export const post: {
-    slug: string;
-    title: string;
-    excerpt: string;
-    publishedAt: string;
-    tags: string[];
-  };
-  const MDXComponent: (props: any) => ReactElement;
+  import type { ComponentType } from 'react';
+  import type { BackstagePostSummary } from '@/types/post';
+  import type { ProjectSummary } from '@/types/project';
+
+  export const post: BackstagePostSummary;
+  export const project: ProjectSummary;
+
+  const MDXComponent: ComponentType;
   export default MDXComponent;
 }
